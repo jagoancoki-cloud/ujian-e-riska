@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <style>
+/* Card login glow */
+.panel {
+    border-radius: 14px !important;
+    overflow: hidden;
+    animation: fadeDown 0.7s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+/* Heading panel */
+.panel-heading {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    background: linear-gradient(90deg, #009efb, #007ad9);
+    color: white !important;
+}
+
+/* Form input glow */
+.form-control {
+    border-radius: 8px !important;
+    border: 1.5px solid #d1e7ff;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: #009efb;
+    box-shadow: 0 0 8px rgba(0,150,255,0.3);
+}
+
+/* Button animation */
+.btn-primary {
+    border-radius: 8px;
+    background: linear-gradient(90deg, #009efb, #007bd4);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,132,255,0.3);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #0086d4, #0063aa);
+}
+
+/* Google button */
+.btn-danger {
+    border-radius: 8px !important;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    transform: scale(1.05);
+}
+
+/* Image animation */
+img.img-responsive {
+    max-width: 260px;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.2);
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Separator style upgrade */
+.separator {
+    font-weight: bold;
+    color: #999;
+}
+
+/* Footer smoother */
+.footer {
+    background: linear-gradient(90deg, #000, #111);
+}
+
+/* Keyframes */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+</style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="title" content="E-Ujian">
+    <meta name="description" content="Ujian online tanpa ribet! ">
+
+    
+    <title>Aplikasi CBT Online | E-Ujian</title>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#009efb">
+    <meta name="msapplication-navbutton-color" content="#009efb">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#009efb">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://s3.ap-southeast-1.amazonaws.com/cdn.e-ujian.com/static-assets/fontawesome/css/font-awesome.min.css"><link rel="stylesheet" href="https://s3.ap-southeast-1.amazonaws.com/cdn.e-ujian.com/static-assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://s3.ap-southeast-1.amazonaws.com/cdn.e-ujian.com/static-assets/css/style.css?v=1.5">    <link rel="icon" type="image/png" sizes="32x32" href="https://s3.ap-southeast-1.amazonaws.com/cdn.e-ujian.com/static-assets/images/favicon/favicon-32x32.png">
+
+    <style>
+        body {
+            background-color: #f9fdff;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d7e8f7' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .fa-btn {
+            margin-right: 6px;
+        }
+        .footer{
+	        text-align: center;
+	        font-size: smaller;
+	        padding: 5px;
+	        color:white;
+	        background-color:#000;
+	        bottom:0px;
+	        width: 100%;
+	        position:fixed;
+        }
+        .navbar-inverse .navbar-brand,.navbar-inverse .navbar-nav>li>a{
+	        color: #fff;
+        }
+    </style>
+</head>
+
+<body id="app-layout">
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="#">
+                    <img width="160px" src="https://s3.ap-southeast-1.amazonaws.com/cdn.e-ujian.com/static-assets/images/logo-v3-1.png" class="img-responsive" />                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav">
+                    
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                                        	                    	<li><a href="https://www.e-ujian.com/web/index">Kembali ke Beranda</a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    margin: 20px 0;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+.google-login{
+    margin:40px 0px;
+}
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">ANOMALI BRAWIJAYA</div>
+                <div class="panel-body">
+	                
+	                	                
+	                <center>
+		                <img class="img-responsive" src="img-riska.jpg" />
+                        <img class="img-responsive" src="img-bintang.jpg" />
+	                <br /><br />
+
+                    	                
+                    <form class="form-horizontal" role="form" method="POST" action="https://www.e-ujian.com/login">
+                        <input type="hidden" name="_token" value="zhJoWSaHZsr3YcnMiBw9y1YkbgfKVHxgWiTEHC5a" autocomplete="off">
+
+                        <div class="form-group">
+                            <label for="email" class="col-md-4 control-label">Username Anomali</label>
+
+                            <div class="col-md-6">
+                                <input id="email" placeholder="username/email" type="text" class="form-control" name="email" value="">
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="col-md-4 control-label">Password Anomali</label>
+
+                            <div class="col-md-6">
+                                <input id="password" placeholder="your password" autocomplete="off" type="password" style="font-family:'Courier New', Courier, monospace;" class="form-control" name="password">
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="sp" type="checkbox" onclick="showpswrd()">Tampilkan Password
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-sign-in"></i> Login
+                                </button>
+
+                                <a class="btn btn-link" href="https://www.e-ujian.com/password/reset">Lupa Password Anomali?</a>
+                            </div>
+                        </div>
+                    </form>
+
+                                                <div class="text-center google-login">
+                                <div class="separator">OR</div>
+                                <a class="btn btn-danger" href="https://www.e-ujian.com/auth/redirect"><i class='fa fa-google'></i> Login with Atimu</a>
+                            </div>
+                                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+    <div class="footer">
+        &copy; 2020-2025 E-ujian.com | SRV-1764543850 | Your IP: 103.183.99.61    </div>
+
+    <!-- JavaScripts -->
+    <script src="https://s3.ap-southeast-1.amazonaws.com/cdn.e-ujian.com/static-assets/js/jquery-3.4.1.min.js"></script><script src="https://s3.ap-southeast-1.amazonaws.com/cdn.e-ujian.com/static-assets/bootstrap/js/bootstrap.min.js"></script>    <script>
+        $(function(){
+            if($(window).width() < 500)
+            {
+                var title = $('.app-title-name').html();
+                var limit = 25;
+                if(title.length > limit)
+                {
+                    title = title.substring(0,limit);
+                    $('.app-title-name').html(title);
+                }
+            }
+        });
+    </script>
+	
+	    <script>
+        function showpswrd() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"38f2f81c7c8a41c8bf8721b9bb0fb650","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
